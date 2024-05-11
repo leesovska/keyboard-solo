@@ -1,4 +1,4 @@
-let words = ['apple', 'banana', 'cherry', 'apricot', 'avocado', 'pineapple',
+const words = ['apple', 'banana', 'cherry', 'apricot', 'avocado', 'pineapple',
 'grapefruit', 'kiwi', 'lime', 'lemon', 'mango', 'melon', 'orange', 'papaya',
 'peach', 'pear', 'persimmon', 'plum', 'pomegranate', 'pomelo', 'tangerine', 'quince'];
 
@@ -12,7 +12,7 @@ window.onload = function() {
 
 
 function getRandomWord() {
-  let index = Math.floor(Math.random() * words.length);
+  const index = Math.floor(Math.random() * words.length);
   return words[index];
 }
 
@@ -28,9 +28,9 @@ function displayWord(word) {
 
 document.addEventListener('keypress', function(event) {
   const letter = event.key;
-  let span = document.querySelector('.word').children[currentIndex];
+  const span = document.querySelector('.word').children[currentIndex];
   if(letter === currentWord[currentIndex]) {
-    span.classList.add('c');
+    span.classList = 'c';
     currentIndex++;
     if(currentIndex === currentWord.length) {
       document.querySelector('.correct-count').textContent++;
@@ -39,7 +39,7 @@ document.addEventListener('keypress', function(event) {
       currentIndex = 0;
     }
   } else {
-    span.classList.add('w');
+    span.classList = 'w';
     document.querySelector('.wrong-count').textContent++;
     document.querySelector('.word-mistakes').textContent++;
   }
